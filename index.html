@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef Ayman Saber Basha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Almarai', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        .section-btn {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 12px;
+            background: linear-gradient(to right, #ff7f50, #ff6347);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .section-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .section-content {
+            display: none;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .section-content img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #ff7f50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.4);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yousef Ayman Saber Basha</h1>
+        <p>مصمم مواقع ويب |حاصل على بكالوريوس نظم معلومات إدارية اكاديميه عين شمس| سنه2025</p>        <!-- مكان للصورة الشخصية -->
+        <img id="profile-pic" src="profile.jpg" alt="صورة شخصية" style="display:block; max-width:150px; border-radius:15px; margin-top:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.4);">
+    </header>
+
+    <!-- زر لإظهار المعلومات الشخصية -->
+    <button class="section-btn" onclick="toggleSection('personal')">معلومات شخصية</button>
+    <div id="personal" class="section-content">
+        <span>تاريخ الميلاد: 27/6/2002</span><br>
+        <span>السن: 23 سنة</span><br>
+        <span>محافظه: القاهره</span><br>
+        <span>مدينه: المطريه</span><br>
+        <!-- مكان لصورة الشهادة -->
+        <img id="certificate-pic" src="certificate.jpg" alt="صورة الشهادة" style="max-width: 300px; border-radius: 15px; margin-top: 20px; box-shadow:0 8px 20px rgba(0,0,0,0.4) ">
+    </div>
+
+    <!-- زر لإظهار المهارات -->
+    <button class="section-btn" onclick="toggleSection('skills')">المهارات</button>
+    <div id="skills" class="section-content">
+        <ul>
+            <li>تصميم وتطوير المواقع الإلكترونية</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>تصميم واجهات جذابة وسهلة الاستخدام</li>
+            <li>تطوير مواقع ثنائية اللغة (عربي/إنجليزي)</li>
+        </ul>
+    </div>
+
+    <!-- زر لإظهار التواصل -->
+    <button class="section-btn" onclick="toggleSection('contact')">تواصل معي</button>
+    <div id="contact" class="section-content">
+        <button class="section-btn" onclick="alert('يمكنك التواصل عبر البريد الإلكتروني: yousefayman2762002@gmail.com')">تواصل الآن</button>
+    </div>
+
+    <footer>
+        &copy; 2025 Yousef Ayman Saber Basha
+    </footer>
+
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            section.style.display = section.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // لإضافة الصور الشخصية والشهادة بعد رفعها على المشروع
+        function setProfilePic(url) {
+            const img = document.getElementById('profile-pic');
+            img.src = url;
+            img.style.display = 'block';
+        }
+
+        function setCertificatePic(url) {
+            const img = document.getElementById('certificate-pic');
+            img.src = url;
+        }
+    </script>
+</body>
+</html>
